@@ -70,14 +70,12 @@ p {
     padding: 0 15px;
     box-sizing: border-box;
     width: 1200px;
-    /* outline: 1px solid tomato; */
 }
 
 
 /* index.html */
 
 /* Header */
-
 .header .container {
     display: flex;
     border-bottom: 1px solid var(--border-color);
@@ -478,6 +476,9 @@ p {
 
 .backdrop {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 0;
     left: 0;
     width: 100%;
@@ -486,16 +487,12 @@ p {
 }
 
 .modal {
-    position: absolute;
-    display: flex;
-    justify-content: flex-end;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    overflow: auto;
+    transform: translateY(0);
+    padding: 40px;
     width: 100%;
     max-width: 528px;
-    height: 100%;
-    max-height: 581px;
     background-color: var(--primary-background-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -504,6 +501,9 @@ p {
 }
 
 .modal-button {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 30px;
     height: 30px;
     margin: 8px 8px 0 0;
@@ -521,21 +521,135 @@ p {
     fill: var(--brand-color);
 }
 
+.modal-title{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 .is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-                visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.is-hidden > .modal {
+.is-hidden>.modal {
     opacity: 0;
-    transform: translate(-50%, -40%);
+    transform: translateY(-10%);
+}
+
+/* Form */
+.form-item {
+    position: relative;
+    margin-bottom: 30px;
 }
 
 
+.form-input {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+    padding: 0 12px 0 40px;
+}
 
+.form-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-left: 15px;
+    fill: var(--primary-color-text);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.form-lable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-18px);
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--secondary-color-text);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.form-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+    resize: none;
+}
+
+.form-textarea::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.textarea {
+    margin-bottom: 20px;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: var(--brand-color);
+}
+
+.form-input:focus + .form-icon {
+    fill: var(--brand-color);
+}
+
+.form-items-checkbox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.check-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: var(--secondary-color-text);
+}
+
+.check-link {
+    color: var(--brand-color);
+}
+
+.form-button-box {
+    display: flex;
+    justify-content: center;
+}
+
+.form-button {
+    padding: 10px 52px;
+    background-color: var(--brand-color);
+    color: var(--primary-background-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
 
 /* PORTFOLIO */
 
