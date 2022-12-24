@@ -62,7 +62,7 @@
       <section class="hero-section">
         <div class="container hero-container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button class="hero-button" type="button" data-modal-open>
+          <button class="button" type="button" data-modal-open>
             Замовити послугу
           </button>
         </div>
@@ -403,7 +403,7 @@
           </ul>
         </div>
         <div class="footer-social">
-          <h2 class="footer-title-social">приєднуйтесь</h2>
+          <h2 class="footer-title">приєднуйтесь</h2>
           <ul class="footer-icons-list">
             <li>
               <a class="footer-icon" href="https://www.instagram.com/">
@@ -434,6 +434,29 @@
               </a>
             </li>
           </ul>
+        </div>
+        <div class="footer-form-box">
+          <form class="footer-form">
+            <div class="footer-form-input-box">
+              <h2 class="footer-title">Підпишіться на розсилку</h2>
+              <input
+                class="footer-form-input"
+                type="email"
+                placeholder="E-mail"
+                name="footre-email"
+                pattern="^([a-zA-Z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"
+                required
+              />
+            </div>
+            <div class="footer-form-button-box">
+              <button class="button footer-form-button" type="submit">
+                Підписатися
+              </button>
+              <svg class="footer-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-footer-form-send"></use>
+              </svg>
+            </div>
+          </form>
         </div>
       </div>
     </footer>
@@ -529,7 +552,7 @@
           </label>
 
           <div class="form-button-box">
-            <button class="form-button" type="submit">Відправити</button>
+            <button class="button form-button" type="submit">Відправити</button>
           </div>
         </form>
       </div>
